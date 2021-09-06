@@ -1,0 +1,20 @@
+
+.nav {
+height: 120px;
+width: 100%;
+font-family: 'Bungee', sans-serif;
+background-color: #4056A1;
+color: #FFFFFF;
+padding: 1em;
+position: absolute;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+}
+
+
+
+.fa-angle-double-down {
+  color: red;
+}
