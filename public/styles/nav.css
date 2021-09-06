@@ -13,7 +13,9 @@ align-items: center;
 justify-content: space-between;
 }
 
-
+.write {
+  font-family: sans-serif;
+}
 
 .fa-angle-double-down {
   color: red;
