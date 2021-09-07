@@ -31,9 +31,10 @@ body {
 center aligned to the body
 the same background colour as the <body> element */
 
-.container {
-  display: flex;
+main {
   width: 90%;
-  justify-content: center;
+  margin: 0 auto;
   background-color: #f4f1ec;
+  display: flex;
+  flex-direction: column;
 }
