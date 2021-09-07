@@ -21,6 +21,10 @@
 <link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
 <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -32,8 +36,9 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript"  src="/scripts/composer-char-counter.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
 
   </head>
 
@@ -59,21 +64,39 @@
   </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main>
     <section class="new-tweet">
-      <!-- <h2 class="h2">Compose Tweet</h2> -->
+
       <form method="POST" action="/tweets">
         <label for="tweet-text"></label>
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-
-<!-- 
-        <input type="text" name="text" id="tweet-text" placeholder="What are you humming about?"></input> -->
         
         <div class="counter">
           <button class="styledButton" type="submit">Tweet</button>
-          <output name="counter" class="new-tweet counter" for="tweet-text">140</output>
+          <output name="counter" id="counterText" class="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
+
+    <section class="new-tweet1">
+      <div class="userInfo">
+        <div class="userImage">
+       <img src="https://i.imgur.com/73hZDYK.png" width="50" height="50"></img>
+      <p>Newton</p></div>
+
+       <p>@SirIsaac</p>
+      </div>
+
+      <article class="tweetContainer">TWEET AREA BLA BLA BLA</article>
+      <footer class="footer"><p>25 days ago</p>
+        <p><i class="fas fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i>
+        </p>
+      </footer>
+    </section>
+    </main>
+    <p class="ybet">a Lighthouse Labs Project - trying to complete by YHL</p>
   </body>
 </html>
+
