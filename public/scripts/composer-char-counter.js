@@ -10,13 +10,20 @@ $(document).ready(function() {
     const counterT = $("#counterText");
     console.log(counterT.text(charactersLeft));
 
+ 
     if (charactersLeft < 0) {
       counterT.css("color", "red");
+      // error message
+
+     
     }
 
     if (charactersLeft > 0) {
       counterT.css("color", "black");
+    
     }
+    
+  
   });
 
 });
