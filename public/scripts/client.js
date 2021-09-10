@@ -4,58 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const escape = function (str) {
-  let textArea = document.createElement("textarea");
-  textArea.appendChild(document.createTextNode(str));
-  return textArea.innerHTML;
-};
-
-const createTweetElement = function (dataObj) {
-  const article =
-    /* Your code for creating the tweet element */
-    ` <section class="new-tweet1">
-    <div class="userInfo">
-         <div class="userImage">
-        <img src="${dataObj.user.avatars}" width="50" height="50"></img>
-       <p>${dataObj.user.name}</p></div>
-
-        <p>${dataObj.user.handle}</p>
-       </div>
-
-      <article class="tweetContainer">${escape(dataObj.content.text)}</article>
-     
-      <footer class="footer"><p>
-      <time class="timeago" datetime="${jQuery.timeago(
-        new Date(dataObj.created_at)
-      )}">${jQuery.timeago(new Date(dataObj.created_at))}</time>
-  </p>
-        <p><i class="fas fa-flag"></i>
-          <i class="fas fa-retweet"></i>
-          <i class="fas fa-heart"></i>
-        </p>
-      </footer>
-      </section>`;
-
-  return article;
-};
-
-const renderTweets = function (data) {
-  $(".tweets").empty();
-  for (const dataObj of data) {
-    $(".tweets").prepend(createTweetElement(dataObj));
-  }
-};
-
-const loadTweets = function () {
-  $.ajax("/tweets", { method: "GET", datatype: "JSON" }).done((data) => {
-    renderTweets(data);
-  });
-};
-
-$(document).ready(function () {
+$(document).ready(function() {
   loadTweets();
 
-  jQuery(document).ready(function () {
+  jQuery(document).ready(function() {
     jQuery("time.timeago").timeago();
   });
 
@@ -64,7 +16,6 @@ $(document).ready(function () {
   $("#tweetPost").submit((event) => {
     console.log("submittted");
     event.preventDefault();
-    // const tweetText = $("#tweet-text").text();
 
     if ($("#counterText").val() < 0) {
        $(".errorBox").slideDown();
@@ -85,6 +36,57 @@ $(document).ready(function () {
       $("#tweet-text").val("");
       $("#counterText").text("140");
     }
-
   });
+
 });
+
+
+// THE LAYOUT WHEN CREATING A NEW TWEET
+const createTweetElement = function(dataObj) {
+
+  const escape = function(str) {
+    let textArea = document.createElement("textarea");
+    textArea.appendChild(document.createTextNode(str));
+    return textArea.innerHTML;
+  };
+
+  const article =
+    ` <section class="new-tweet1">
+    <div class="userInfo">
+         <div class="userImage">
+        <img src="${dataObj.user.avatars}" width="50" height="50"></img>
+       <p>${dataObj.user.name}</p></div>
+
+        <p>${dataObj.user.handle}</p>
+       </div>
+
+      <article class="tweetContainer">${escape(dataObj.content.text)}</article>
+     
+      <footer class="footer"><p>
+      <time class="timeago" datetime="${jQuery.timeago(new Date(dataObj.created_at))}">${jQuery.timeago(new Date(dataObj.created_at))}</time></p>
+        <p><i class="fas fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i>
+        </p>
+      </footer>
+      </section>`;
+
+  return article;
+};
+
+// RENDER TWEETS FROM createTweetElement
+const renderTweets = function(data) {
+  $(".tweets").empty();
+  for (const dataObj of data) {
+    $(".tweets").prepend(createTweetElement(dataObj));
+  }
+};
+
+// LOAD TWEETS from renderTweets
+const loadTweets = function() {
+  $.ajax("/tweets", { method: "GET", datatype: "JSON" }).done((data) => {
+    renderTweets(data);
+  });
+};
+
+
