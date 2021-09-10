@@ -1,6 +1,7 @@
+// DOM READY
+// CHARACTER COUNT FEATURE
 $(document).ready(function() {
   // --- our code goes here ---
-  console.log("im ready world!");
 
   $("#tweet-text").on('input', function() {
 
@@ -13,19 +14,13 @@ $(document).ready(function() {
  
     if (charactersLeft < 0) {
       counterT.css("color", "red");
-      // error message
-
-     
     }
 
     if (charactersLeft > 0) {
       counterT.css("color", "black");
-    
     }
-    
-  
+   
   });
-
 });
 
 
