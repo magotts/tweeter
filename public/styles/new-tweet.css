@@ -1,33 +1,25 @@
-.container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
 .new-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 5px;
-}
-
-.h2 {
-  padding: 10px;
+  width: 100%;
+  height: auto;
+  padding-right: 7%;
+  padding-left: 15%;
+  padding-top: 7%;
 }
 
 .styledButton {
   background-color: #4056A1;
   font-family: 'Bungee', sans-serif;
   color: white;
-
 }
 
 .counter {
   display: flex;
   font-family: 'Bungee', sans-serif;
   justify-content: space-between;
-  
 }
 
 textarea {
@@ -37,9 +29,8 @@ textarea {
   border: none;
   border-bottom: 4px solid black;
   margin-bottom: 5px;
-  width: 600px;
+  width: 80vw;
   padding-top: 4em;
- 
 }
 
 .new-tweet1 {
@@ -47,17 +38,23 @@ textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 3em 7em 3em 7em;
+  margin: 3em 3em 3em 0;
   border: 3px solid black;
   transition: box-shadow .2s;
+  width: 80vw;
 }
+
+.new-tweet1:hover {
+  box-shadow: 8px 8px turquoise;
+}
+
 
 .userInfo {
   display: flex;
   justify-content: space-between;
   width: 90%;
   font-size: 20px;
-  
+  padding-top: 10px;
 }
 
 .footer {
@@ -67,7 +64,6 @@ textarea {
   font-size: 15px;
 }
 
-
 .tweetContainer {
   background-color: transparent;
   resize: none;
@@ -75,14 +71,9 @@ textarea {
   border: none;
   border-bottom: 4px solid black;
   margin-bottom: 5px;
-  width: 90%;
+  width: 95%;
   padding-top: 20px;
-  
-}
-
-
-.new-tweet1:hover {
-  box-shadow: 8px 8px turquoise;
+  padding-bottom: 20px;
 }
 
 .userImage {
@@ -104,7 +95,11 @@ article {
   margin-bottom: 5px;
   width: 500px;
   padding-top: 4em;
- 
+}
+
+.div {
+  text-align: center;
+  width: 87%;
 }
 
 .errorBox {
@@ -113,6 +108,7 @@ article {
   padding: 4px;
   margin-top: 1em;
   display: none;
+  margin-right:78px;
 }
 
 .errorBox1 {
@@ -121,4 +117,25 @@ article {
   padding: 4px;
   margin-top: 1em;
   display: none;
+  margin-right:78px;
+}
+
+#tweetPost {
+  margin-right: 3em;
+}
+
+@media screen and (min-width: 1024px) {
+  
+  .new-tweet1 {
+    width: 50vw;
+  }
+
+  .new-tweet {
+    align-items: flex-end;
+  }
+
+  textarea {
+    width: 50vw;
+  }
+  
 }
