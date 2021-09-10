@@ -48,10 +48,9 @@
     <!-- Top nav bar (fixed) -->
     <nav class="nav">
       <span>tweeter</span>
-      <span class="write"><strong>Write</strong> a New Tweet <br>
+      <span style="font-family:sans-serif; font-size:20px"><strong>Write</strong> a New Tweet <br>
         <i class="fas fa-angle-double-down"></i>
       </span>
-     
     </nav>
 
     <main>
@@ -63,13 +62,13 @@
       <div>
           <h2 class="avatar">Yvette</h2>
       </div>
-  </header>
+    </header>
 
     <!-- Page-specific (main) content here -->
     
     <section class="new-tweet">
-      <div class="errorBox">ERROR: 140 character limit exceeded!</div>
-      <div class="errorBox1">ERROR: Empty content.</div>
+      <div class="div errorBox">ERROR: 140 character limit exceeded!</div>
+      <div class="div errorBox1">ERROR: Empty content.</div>
 
       <form method="POST" action="/tweets" id="tweetPost">
         <label for="tweet-text"></label>
@@ -86,6 +85,7 @@
     </div>
   </section>
     </main>
+ 
     <p class="ybet">a Lighthouse Labs Project - trying to complete by YHL</p>
   </body>
 </html>
