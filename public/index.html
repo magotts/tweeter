@@ -9,19 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
    
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,600;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,600;1,300&display=swap" rel="stylesheet">
+
 <!-- 
 <link rel="stylesheet" href="~/lib/Font-Awesome/css/fontawesome.min.css">
 <link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
 <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css"> -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
 
@@ -41,29 +42,20 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript"  src="/scripts/composer-char-counter.js"></script>
 
-
-   
-   
-<!--    
-   <script src="jquery.min.js" type="text/javascript"></script>
-<script src="jquery.timeago.js" type="text/javascript"></script> -->
-
- </script>
-
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav class="nav">
       <span>tweeter</span>
-      <span class="write"><b>Write</b> a New Tweet <br>
-        <center><a href="#newTweet"><i class="fas fa-angle-double-down"></i></a></center>
+      <span class="write"><strong>Write</strong> a New Tweet <br>
+        <i class="fas fa-angle-double-down"></i>
       </span>
      
     </nav>
 
-    <header class="header">
-  
+    <main>
+    <header>
       <div class="avatar"> 
           <img src="/images/profile-hex.png"> 
       </div>
@@ -74,11 +66,10 @@
   </header>
 
     <!-- Page-specific (main) content here -->
-    <main>
+    
     <section class="new-tweet">
       <div class="errorBox">ERROR: 140 character limit exceeded!</div>
       <div class="errorBox1">ERROR: Empty content.</div>
-
 
       <form method="POST" action="/tweets" id="tweetPost">
         <label for="tweet-text"></label>
@@ -89,15 +80,11 @@
           <output name="counter" id="counterText" class="counter" for="tweet-text">140</output>
         </div>
       </form>
-    </section>
-
     
-    <div id="newTweet" class="tweets">
-    
-  </div>
-  
-
-
+    <div class="tweets">
+    <!-- LOADING THE TWEETS HERE -->
+    </div>
+  </section>
     </main>
     <p class="ybet">a Lighthouse Labs Project - trying to complete by YHL</p>
   </body>
