@@ -4,21 +4,25 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// READY THE DOM
 $(document).ready(function() {
+  
+  // LOAD THE TWEETS
   loadTweets();
 
+  // FOR THE TIME POSTED FEATURE
   jQuery(document).ready(function() {
     jQuery("time.timeago").timeago();
   });
 
-  console.log("Hello from client.js");
-
+  // ON SUBMIT, PREVENT SUBMIT BUTTON FROM GOING TO NEXT PAGE
   $("#tweetPost").submit((event) => {
     console.log("submittted");
     event.preventDefault();
 
+    // ERROR MESSAGES APPEAR IF TEXT EXCEEDS CHAR COUNT 140/EMPTY
     if ($("#counterText").val() < 0) {
-       $(".errorBox").slideDown();
+      $(".errorBox").slideDown();
     } else if ($("#counterText").val() == 140) {
       $(".errorBox1").slideDown();
     } else {
@@ -33,6 +37,8 @@ $(document).ready(function() {
         $(".errorBox1").slideUp();
       });
 
+      // CLEARS UP THE TEXTAREA AFTER SUBMITTING
+      // CHAR COUNT RESET TO 140 AFTER SUBMITTING
       $("#tweet-text").val("");
       $("#counterText").text("140");
     }
@@ -41,15 +47,17 @@ $(document).ready(function() {
 });
 
 
-// THE LAYOUT WHEN CREATING A NEW TWEET
+// THE LAYOUT AND VALUES WHEN CREATING A NEW TWEET
 const createTweetElement = function(dataObj) {
 
+  // ESCAPE - PREVENTING SCRIPTS TO WORK WHEN USERS POST IT AS TWEETS
   const escape = function(str) {
     let textArea = document.createElement("textarea");
     textArea.appendChild(document.createTextNode(str));
     return textArea.innerHTML;
   };
 
+  // THE LAYOUT
   const article =
     ` <section class="new-tweet1">
     <div class="userInfo">
@@ -57,7 +65,7 @@ const createTweetElement = function(dataObj) {
         <img src="${dataObj.user.avatars}" width="50" height="50"></img>
        <p>${dataObj.user.name}</p></div>
 
-        <p>${dataObj.user.handle}</p>
+        <p style="color:green;">${dataObj.user.handle}</p>
        </div>
 
       <article class="tweetContainer">${escape(dataObj.content.text)}</article>
