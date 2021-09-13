@@ -17,7 +17,6 @@ $(document).ready(function() {
 
   // ON SUBMIT, PREVENT SUBMIT BUTTON FROM GOING TO NEXT PAGE
   $("#tweetPost").submit((event) => {
-    console.log("submittted");
     event.preventDefault();
 
     // ERROR MESSAGES APPEAR IF TEXT EXCEEDS CHAR COUNT 140/EMPTY
